@@ -35,9 +35,6 @@ public class Pep8Simulator {
     private JButton executeButton;
     private JLabel stateLabel;
     private JTextArea objTextArea;
-    
-    private JTextArea srcCodeTextArea;
-    
     private JTextArea inputTextArea;
     private JTextArea outputTextArea;
     private JMenuItem loadItem;
@@ -85,12 +82,7 @@ public class Pep8Simulator {
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         JPanel objPanel = new JPanel();
         JPanel ioPanel = new JPanel();
-        JPanel srcCodePanel = new JPanel();
-        
-        objPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-        
-        srcCodePanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-        
+        objPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         ioPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         ioPanel.setLayout(new GridLayout(1, 2, 10, 10));
         JPanel inputPanel = new JPanel();
@@ -99,7 +91,6 @@ public class Pep8Simulator {
         ioPanel.add(outputPanel);
         leftPanel.add(objPanel);
         leftPanel.add(ioPanel);
-        leftPanel.add(srcCodePanel);
 
         // right panel shows cpu registers and memory dump
         JPanel rightPanel = new JPanel();
@@ -136,14 +127,8 @@ public class Pep8Simulator {
 
         // initialize obj code panel components
         JLabel objLabel = new JLabel("Obj Code");
-        objTextArea = new JTextArea(16, 12);
+        objTextArea = new JTextArea(16, 24);
         addLabelAndTextAreaToPanel(objLabel, objTextArea, objPanel);
-        
-        
-        JLabel srcCodeLabel = new JLabel("Source Code");
-        srcCodeTextArea = new JTextArea(16, 12);
-        addLabelAndTextAreaToPanel(srcCodeLabel, srcCodeTextArea, objPanel);
-        
 
         // initialize io panel components
         // input area
