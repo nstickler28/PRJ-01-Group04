@@ -1,0 +1,9 @@
+.idea/
+.classpath
+.DS_Store
+.project
+PRJ#01-Group04.iml
+pep8simulator/.idea
+pep8simulator/out
+pep8simulator/.DS_Store
+pep8simulator/pep8simulator.iml
