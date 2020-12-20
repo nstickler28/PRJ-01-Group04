@@ -1,6 +1,6 @@
-//import controller.CPU;
-//import model.Memory;
-//import view.IO;
+import controller.CPU;
+import model.Memory;
+import view.IO;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -60,8 +60,8 @@ public class CPUTest {
 		String objCode = "70 00 05 00 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(5, cpu.aRegister);
-//		assertEquals(5, cpu.getRegisters().getAccumulator());
+//		assertEquals(5, cpu.aRegister);
+		assertEquals(5, cpu.getRegisters().getAccumulator());
 	}
 
 
@@ -70,8 +70,7 @@ public class CPUTest {
 		String objCode = "78 00 05 00 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-//		assertEquals(5, cpu.aRegister);
-//		assertEquals(5, cpu.getRegisters().getIndexRegister());
+		assertEquals(5, cpu.getRegisters().getIndexRegister());
 	}
 
 	@Test
@@ -79,8 +78,8 @@ public class CPUTest {
 		String objCode = "71 00 04 00 00 05 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(5, cpu.aRegister);
-//		assertEquals(5, cpu.getRegisters().getAccumulator());
+//		assertEquals(5, cpu.aRegister);
+		assertEquals(5, cpu.getRegisters().getAccumulator());
 	}
 
 	@Test
@@ -88,8 +87,8 @@ public class CPUTest {
 		String objCode = "72 00 04 00 00 06 00 01 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(1, cpu.aRegister);
-//		assertEquals(1, cpu.getRegisters().getAccumulator());
+//		assertEquals(1, cpu.aRegister);
+		assertEquals(1, cpu.getRegisters().getAccumulator());
 	}
 
 	@Test
@@ -97,8 +96,8 @@ public class CPUTest {
 		String objCode = "70 00 05 80 00 03 00 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(2, cpu.aRegister);
-//		assertEquals(2, cpu.getRegisters().getAccumulator());
+//		assertEquals(2, cpu.aRegister);
+		assertEquals(2, cpu.getRegisters().getAccumulator());
 	}
 
 	@Test
@@ -106,8 +105,8 @@ public class CPUTest {
 		String objCode = "70 00 01 a0 00 02 00 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(3, cpu.aRegister);
-//		assertEquals(3, cpu.getRegisters().getAccumulator());
+//		assertEquals(3, cpu.aRegister);
+		assertEquals(3, cpu.getRegisters().getAccumulator());
 	}
 
 	@Test
@@ -115,8 +114,8 @@ public class CPUTest {
 		String objCode = "70 00 01 90 00 02 00 zz";
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
-		assertEquals(0, cpu.aRegister);
-//		assertEquals(0, cpu.getRegisters().getAccumulator());
+//		assertEquals(0, cpu.aRegister);
+		assertEquals(0, cpu.getRegisters().getAccumulator());
 	}
 
 	@Test
@@ -134,8 +133,8 @@ public class CPUTest {
 		loadObjIntoMemory(objCode);
 		int ret = cpu.run(memory, io);
 		cpu.reset();
-		assertEquals(0, cpu.aRegister);
-//		assertEquals(0, cpu.getRegisters().getProgramCounter());
+//		assertEquals(0, cpu.aRegister);
+		assertEquals(0, cpu.getRegisters().getProgramCounter());
 
 	}
 
