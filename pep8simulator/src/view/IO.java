@@ -1,3 +1,5 @@
+package view;
+
 import javax.swing.*;
 
 /**
@@ -18,15 +20,17 @@ public class IO {
     JTextArea input;    // input device
     JTextArea output;   // output device
 
-    // set up input device
     public void setInputDevice(JTextArea inputDevice){
         input = inputDevice;
     }
 
-    // set up output device
     public void setOutputDevice(JTextArea outputDevice){
         output = outputDevice;
     }
+
+    public JTextArea getInput(){return input;}
+
+    public JTextArea getOutputDevice(){return output;}
 
     // read one char from input device
     public byte readByteFromInput() {
@@ -36,6 +40,11 @@ public class IO {
     // send one char to output device
     public void putByte(byte content) {
         output.append(String.valueOf((char) content));
+    }
+
+    // send one char to output device
+    public void putDecimal(int content) {
+        output.append(String.valueOf(content));
     }
 
     // reset input device cursor
